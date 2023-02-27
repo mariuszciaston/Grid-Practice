@@ -1,5 +1,40 @@
 .container {
     display: grid;
-    grid-template-columns: 50px 50px;
+
+    grid-template-columns: [first] 150px [second] 150px [last];
+    grid-template-columns: [first] 1fr [second] 2fr [last];
+
+    /* width of defined (explicit) columns */
+
     grid-template-rows: 50px 50px;
-  }
+    /* height of defined (explicit) rows */
+
+    /* grid-template: 50px 50px / 250px 50px 50px; */
+
+    grid-auto-rows: 50px;
+    /* height of undefined (implicit) rows */
+
+    /* grid-auto-flow: column; */
+    /* similar to flex-direction, change axis of additional, undefined (implicit) element placement */
+
+    grid-auto-columns: 50px;
+    /* width of undefined (implicit) rows */
+
+    column-gap: 10px;
+    row-gap: 20px;
+    gap: 15px;
+}
+
+.container>div {
+    border: 1px solid blue;
+    background-color: rgba(0,0,255,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .grey {
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.1);
+    grid-column: first / last;
+}
