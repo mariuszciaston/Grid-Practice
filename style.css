@@ -6,11 +6,13 @@
 
     /* width of defined (explicit) columns */
 
-    grid-template-rows: 50px 50px;
+    grid-template-rows: 50px 50px 50px 100px 200px 300px;
+    grid-template-rows: repeat(4, 100px);
     /* height of defined (explicit) rows */
 
     /* grid-template: 50px 50px / 250px 50px 50px; */
-
+    
+    /* grid-auto-rows: minmax(100px, auto); */
     grid-auto-rows: 50px;
     /* height of undefined (implicit) rows */
 
@@ -36,5 +38,22 @@
 .container .grey {
     border: 1px solid black;
     background-color: rgba(0,0,0,0.1);
+    /* grid-column: 1 / 3; */
     grid-column: first / last;
+}
+
+
+.container>div:nth-child(9){
+    background-color: yellow;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    /* order: -1; */
+    
+}
+
+.container>div:nth-child(9)>div{
+    border: 1px solid black;
+    display: inherit;
+    align-items: center;
 }
